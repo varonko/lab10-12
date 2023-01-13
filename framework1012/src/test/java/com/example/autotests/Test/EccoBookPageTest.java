@@ -72,7 +72,7 @@ public class EccoShoesPageTest {
         eccoShoesPage.openProf();
         eccoShoesPage.removeFromBook();
     }
-/*   
+
  @Test
     public void LikeFromBook() {
         eccoShoesPage.openProf();
