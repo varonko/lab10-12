@@ -32,6 +32,11 @@ public class EccoShoesPage {
     public final SelenideElement lupa = $x("//*[@id='search-book-button']");
     public final SelenideElement au = $x("//*[@class='header-nav__link header-nav__link_icon-2']");
     public final SelenideElement book = $x("//*[@class='ellip']");
+
+    public final SelenideElement book2 = $x("//*[@class='book__image search_res_img_list']");
+    public final SelenideElement like = $x(" //span[@class='button-like__cols']");
+    public final SelenideElement check = $x("//*[@class='header-events__button header-evt-but-mob']");
+
     public final SelenideElement bibleo = $x("//*[@class='tabs-nav-2__link']");
     public final SelenideElement mmain = $x("//*[@class='header-logo']");
     public final SelenideElement bibl = $x("//*[@class='add-remove js-library']");
@@ -113,31 +118,31 @@ public class EccoShoesPage {
     }
     public void ReadBook(String Value)  {
         clickOnElement(lupa);
-        sleep(1000);
+        sleep(100);
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
-        sleep(1000);
+        sleep(100);
         clickOnElement(book);
-        sleep(1000);
+        sleep(100);
         clickOnElement(readd);
     }
 
     public void DownBook(String Value) {
         clickOnElement(lupa);
-        sleep(2000);
+        sleep(200);
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
-        sleep(2000);
+        sleep(200);
         clickOnElement(book);
-        sleep(2000);
+        sleep(200);
         clickOnElement(down);
     }
     public void Auth(String Value) {
         clickOnElement(au);
-        sleep(2000);
+        sleep(200);
         setValueOnInput(SearchAv,Value);
         PressSearchButton(SearchAv);
-        sleep(2000);
+        sleep(200);
 
     }
 
@@ -158,42 +163,25 @@ public class EccoShoesPage {
 
     public void removeFromBook(){
        // goToMainPage();
-        sleep(2000);
+        sleep(200);
         clickOnElement(bibleo);
-        sleep(2000);
+        sleep(200);
     }
-    public void addToFavorite(){
-        goToShopPage();
-        sleep(3000);
-        clickOnElement(favBtn);
-        sleep(5000);
-        clickOnElement(favPage);
-        sleep(5000);
+    
+
+    public void LikeFromBook(String Value){
+        clickOnElement(lupa);
+        sleep(100);
+        setValueOnInput(SearchArea,Value);
+        PressSearchButton(SearchArea);
+        sleep(100);
+        clickOnElement(book2);
+        sleep(100);
+        clickOnElement(like);
     }
-
-    public void removeFromFavorite(){
-        clickOnElement(removeFav);
-        sleep(5000);
+    
+    public void CheckNotificationn(){
+        clickOnElement(check);
     }
-
-
-    public void FindRedLowPrice(){
-        goToShopPage();
-        sleep(5000);
-        clickOnElement(lowPrice);
-        sleep(5000);
-        clickOnElement(red);
-        sleep(5000);
-    }
-
-    public void Subscription (SelenideElement inputElement,String Value) throws InterruptedException
-    {
-        setValueOnInput(mailArea,Value);
-        sleep(3000);
-        clickOnElement(signInBtn);
-        sleep(3000);
-    }
-
-
 
 }

@@ -72,48 +72,21 @@ public class EccoShoesPageTest {
         eccoShoesPage.openProf();
         eccoShoesPage.removeFromBook();
     }
+/*   
+ @Test
+    public void LikeFromBook() {
+        eccoShoesPage.openProf();
+        eccoShoesPage.LikeFromBook("Межпланетная связь");
+    }    
 
-    @Test
-    public void Favorite() {
 
-        eccoShoesPage.addToFavorite();
+ @Test
+    public void CheckNotification() {
+        eccoShoesPage.CheckNotificationn();
+    }    
 
-        Assert.isTrue(eccoShoesPage.favResult.getText().equals("To permanently save your wishlist please login or sign up."), "Your wishlist is empty!'");
-    }
 
-    @Test
-    public void removeFavorite() {
-
-        eccoShoesPage.addToFavorite();
-        eccoShoesPage.removeFromFavorite();
-        Assert.isTrue(eccoShoesPage.favResultForRemove.getText().equals("Your wishlist is empty!"), "To permanently save your wishlist please login or sign up.");
-    }
- /*   @Test
-    public void FindVeganFriendly() {
-        eccoShoesPage.FindVeganFriendly();
-        Assert.isTrue(eccoShoesPage.veganRes.getText().equals("Vegan"), "Header text is not equal to 'Vegan'");
-    }
 */
- @Test
- public void FindRedLowPrice() {
-
-     eccoShoesPage.FindRedLowPrice();
-     sleep(3000);
-     Assert.isTrue(!eccoShoesPage.cartcount.getText().equals("( 0 )"), "1");
- }
-
- @Test
-    public void JoinMaillingLIst_valid() throws InterruptedException{
-     eccoShoesPage.Subscription(eccoShoesPage.mailArea,("user1@gmail.com"));
-     sleep(3000);
-     Assert.isTrue(!eccoShoesPage.cartcount.getText().equals("( 0 )"), "1");
- }
-
-    @Test
-    public void JoinMaillingLIst_NotValid() throws InterruptedException{
-        eccoShoesPage.Subscription(eccoShoesPage.mailArea,("user1@gmail"));
-        sleep(3000);
-        Assert.isTrue(eccoShoesPage.cartcount.getText().equals("( 0 )"), "1");
-    }
+  
 
 }
