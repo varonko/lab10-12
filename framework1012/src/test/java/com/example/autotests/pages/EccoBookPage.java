@@ -15,14 +15,18 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Duration;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.Keys;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$x;
 
-public class EccoShoesPage {
+  public class EccoBookPage {
 
 
     public final String URL = "https://readli.net/";
     public final String URL1 = "https://readli.net/profile/686157419/";
+
     public final SelenideElement entrpar = $x("//*[@class='whsOnd zHQkBf']");
     public final SelenideElement nex = $x("//*[@class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 qIypjc TrZEUc lw1w4b']");
     public final SelenideElement gog = $x("//*[@class='socials-1__link socials-1__link_icon-4 button-blue']");
@@ -31,11 +35,13 @@ public class EccoShoesPage {
     public final SelenideElement span = $x("//h1");
     public final SelenideElement lupa = $x("//*[@id='search-book-button']");
     public final SelenideElement au = $x("//*[@class='header-nav__link header-nav__link_icon-2']");
+      public final SelenideElement janr = $x("//*[@class='header-nav__link header-nav__link_icon-3']");
+      public final SelenideElement fant = $x("//*[@class='genre__link']");
     public final SelenideElement book = $x("//*[@class='ellip']");
 
     public final SelenideElement book2 = $x("//*[@class='book__image search_res_img_list']");
-    public final SelenideElement like = $x(" //span[@class='button-like__cols']");
-    public final SelenideElement check = $x("//*[@class='header-events__button header-evt-but-mob']");
+    public final SelenideElement tag = $x(" //*[@class='tags__link']");
+    public final SelenideElement check = $x("//*[@class='header-events js-fade-click js-scroll']");
 
     public final SelenideElement bibleo = $x("//*[@class='tabs-nav-2__link']");
     public final SelenideElement mmain = $x("//*[@class='header-logo']");
@@ -47,7 +53,7 @@ public class EccoShoesPage {
     public final SelenideElement SearchAv = $x("//*[@id='search-author']");
     public final SelenideElement size = $x("//li[@data-size='36']");
     public final SelenideElement ShoesLink = $x("//img[@alt='Ashes-100']");
-    public final SelenideElement MainPage  = $x("//img[@class='logo']");
+    public final SelenideElement MainPage  = $x("//*[@class='header-logo']");
     public final SelenideElement addInBasketBtn = $x("//*[@id='product-add-to-cart']");
     public final SelenideElement cartcount = $x("//*[@id='cartCount']");
     public final SelenideElement ShopPage  = $x("//li[@class='dropdown mega-menu']");
@@ -99,14 +105,14 @@ public class EccoShoesPage {
 
     public void EnterGoogle(String Value, String Value2)  {
         clickOnElement(en);
-        sleep(100);
+        sleep(10);
         clickOnElement(gog);
-        sleep(100);
+        sleep(10);
         setValueOnInput(entrpar,Value);
         clickOnElement(nex);
-        sleep(100);
+        sleep(10);
         setValueOnInput(entrpar,Value2);
-        sleep(100);
+        sleep(10);
         clickOnElement(nex);
     }
 
@@ -118,31 +124,31 @@ public class EccoShoesPage {
     }
     public void ReadBook(String Value)  {
         clickOnElement(lupa);
-        sleep(100);
+        sleep(10);
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
-        sleep(100);
+        sleep(10);
         clickOnElement(book);
-        sleep(100);
+        sleep(10);
         clickOnElement(readd);
     }
 
     public void DownBook(String Value) {
         clickOnElement(lupa);
-        sleep(200);
+        sleep(20);
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
-        sleep(200);
+        sleep(20);
         clickOnElement(book);
-        sleep(200);
+        sleep(20);
         clickOnElement(down);
     }
     public void Auth(String Value) {
         clickOnElement(au);
-        sleep(200);
+        sleep(20);
         setValueOnInput(SearchAv,Value);
         PressSearchButton(SearchAv);
-        sleep(200);
+        sleep(20);
 
     }
 
@@ -152,7 +158,7 @@ public class EccoShoesPage {
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
         clickOnElement(book);
-        sleep(100);
+        sleep(10);
         clickOnElement(bibl);
 
     }
@@ -163,25 +169,26 @@ public class EccoShoesPage {
 
     public void removeFromBook(){
        // goToMainPage();
-        sleep(200);
+        sleep(20);
         clickOnElement(bibleo);
-        sleep(200);
+        sleep(20);
     }
     
 
-    public void LikeFromBook(String Value){
+    public void TagFromBook(String Value){
         clickOnElement(lupa);
-        sleep(100);
+        sleep(10);
         setValueOnInput(SearchArea,Value);
         PressSearchButton(SearchArea);
-        sleep(100);
+        sleep(10);
         clickOnElement(book2);
-        sleep(100);
-        clickOnElement(like);
+        sleep(10);
+        clickOnElement(tag);
     }
     
-    public void CheckNotificationn(){
-        clickOnElement(check);
+    public void CheckJanr(){
+        clickOnElement(janr);
+        clickOnElement(fant);
     }
 
 }

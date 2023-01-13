@@ -1,26 +1,18 @@
 package com.example.autotests.Test;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import com.example.autotests.pages.EccoShoesPage;
-import dev.failsafe.internal.util.Assert;
+import com.example.autotests.pages.EccoBookPage;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import static com.codeborne.selenide.Selenide.*;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-public class EccoShoesPageTest {
-    private final EccoShoesPage eccoShoesPage = new EccoShoesPage();
+public class EccoBookPageTest {
+    private final EccoBookPage eccoShoesPage = new EccoBookPage();
 
     @BeforeAll
     public static void setUpAll() {
@@ -57,13 +49,12 @@ public class EccoShoesPageTest {
     }
     @Test
     public void EnterV() throws InterruptedException {
-        eccoShoesPage.EnterGoogle("liza17012003.lv@gmail.com","!2169!10!");
+        eccoShoesPage.EnterGoogle("liza17012003.lv@gmail.com","!10!2169!");
     }
 
 
     @Test
     public void AddItemInBasket() {
-        eccoShoesPage.EnterGoogle("liza17012003.lv@gmail.com","!2169!10!");
         eccoShoesPage.openProf();
         eccoShoesPage.addBooksInBasket("Заводной апельсин");
     }
@@ -74,19 +65,20 @@ public class EccoShoesPageTest {
     }
 
  @Test
-    public void LikeFromBook() {
+    public void TagFromBook() {
         eccoShoesPage.openProf();
-        eccoShoesPage.LikeFromBook("Межпланетная связь");
+        eccoShoesPage.TagFromBook("Межпланетная связь");
     }    
 
 
  @Test
-    public void CheckNotification() {
-        eccoShoesPage.CheckNotificationn();
+    public void CheckJanr() {
+     eccoShoesPage.openPage();
+     eccoShoesPage.CheckJanr();
     }    
 
 
-*/
+
   
 
 }

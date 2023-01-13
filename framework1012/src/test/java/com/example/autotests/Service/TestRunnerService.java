@@ -1,6 +1,6 @@
 package com.example.autotests.Service;
 
-import com.example.autotests.Test.EccoShoesPageTest;
+import com.example.autotests.Test.EccoBookPageTest;
 import org.junit.Test;
 import org.junit.experimental.ParallelComputer;
 import org.junit.runner.JUnitCore;
@@ -16,7 +16,7 @@ public class TestRunnerService {
     @Test
     public void runTestsInParallel(){
 
-        Class [] testClasses = {EccoShoesPageTest.class};
+        Class [] testClasses = {EccoBookPageTest.class};
         Result result = JUnitCore.runClasses(new ParallelComputer(true, true), testClasses);
 
         for (Failure failure : result.getFailures()) {
